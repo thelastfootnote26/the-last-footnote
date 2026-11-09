@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171613">
+  <title>The Last Footnote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- MAIN MENU -->
+    <section id="menu" class="screen active">
+      <div class="menu-overlay">
+        <div class="menu-content">
+          <p class="eyebrow">AN INTERACTIVE MYSTERY NOVEL</p>
+          <h1>THE LAST<br><span>FOOTNOTE</span></h1>
+          <p class="tagline">"Tidak semua kebenaran ingin ditemukan."</p>
+
+          <div class="menu-buttons">
+            <button class="main-btn" onclick="newGame()">NEW GAME</button>
+            <button class="secondary-btn" onclick="continueGame()">CONTINUE</button>
+            <button class="secondary-btn" onclick="showCredits()">CREDITS</button>
+          </div>
+
+          <p class="menu-footer">A mystery hidden inside an article.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="game" class="screen">
+      <header class="topbar">
+        <div>
+          <span class="small-label">THE LAST FOOTNOTE</span>
+          <div id="chapter-label">CHAPTER 01</div>
+        </div>
+
+        <div class="top-actions">
+          <button onclick="openNotebook()">NOTEBOOK</button>
+          <button onclick="openMenu()">MENU</button>
+        </div>
+      </header>
+
+      <div id="scene" class="scene">
+        <div class="scene-shade"></div>
+        <div id="location" class="location">SMA ARUNIKA</div>
+        <div id="scene-title" class="scene-title">The Beginning</div>
+      </div>
+
+      <div class="story-area">
+        <div class="story-inner">
+          <div id="speaker" class="speaker"></div>
+          <div id="story-text" class="story-text"></div>
+          <div id="choices" class="choices"></div>
+          <button id="next-btn" class="next-btn" onclick="nextScene()">
+            LANJUTKAN →
+          </button>
+        </div>
+      </div>
+
+      <footer class="game-footer">
+        <span id="progress-text">Chapter 1</span>
+        <span>THE ARUNIKA ARCHIVES</span>
+      </footer>
+    </section>
+
+    <!-- NOTEBOOK -->
+    <section id="notebook" class="screen modal-screen">
+      <div class="modal">
+        <button class="close-btn" onclick="closeNotebook()">✕</button>
+        <p class="eyebrow">PRIVATE RECORDS</p>
+        <h2>Investigation Notebook</h2>
+        <p class="muted">Setiap petunjuk yang ditemukan akan tersimpan di sini.</p>
+        <div id="clue-list"></div>
+        <h3>Article Draft</h3>
+        <div class="draft">
+          <p>Judul: Misteri Arsip SMA Arunika</p>
+          <p id="draft-text">Belum ada kesimpulan yang dapat ditulis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENDING -->
+    <section id="ending" class="screen">
+      <div class="ending-content">
+        <p class="eyebrow">THE END</p>
+        <h1 id="ending-title">THE LAST FOOTNOTE</h1>
+        <p id="ending-description"></p>
+        <button class="main-btn" onclick="newGame()">PLAY AGAIN</button>
+        <button class="secondary-btn" onclick="openMenu()">MAIN MENU</button>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section id="credits" class="screen modal-screen">
+      <div class="modal">
+        <button class="close-btn" onclick="openMenu()">✕</button>
+        <h2>About the Game</h2>
+        <p>
+          The Last Footnote adalah novel misteri interaktif
+          yang menggabungkan penyelidikan dengan pembelajaran
+          Bahasa Indonesia.
+        </p>
+        <p>Materi: Bab 3 — Menyusun Artikel Ilmiah Populer.</p>
+        <p>Created for an Indonesian language project.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
